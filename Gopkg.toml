@@ -1,0 +1,9 @@
+# Gopkg.toml for gosshtar
+#
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
+  version = "1.4.0"
+
+[prune]
+  go-tests = true
+  unused-packages = true
