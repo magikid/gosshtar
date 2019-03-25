@@ -63,7 +63,7 @@ func HandleConnectionText(conn net.Conn, lines []string) {
 			log.Infof("Connection closed for %v", conn.RemoteAddr())
 			break
 		}
-		time.Sleep(1 * time.Second)
+		time.Sleep(10 * time.Second)
 
 		lineNumber = lineNumber + 1
 		if lineNumber > len(lines)-1 {

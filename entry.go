@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	log "github.com/sirupsen/logrus"
 	"os"
 )
@@ -33,9 +34,9 @@ func initLogging() {
 
 func initFlags() AppOptions {
 	hostPtr := flag.String("host", "0.0.0.0", "Restrict the server to a specific IP")
-	portPtr := flag.Int("port", 2222, "The port for the SSH tar-pit to run on")
+	portPtr := flag.Int("port", 2222, "The port to run on")
 	filePtr := flag.String("file", "", "A file of text to send to the bad actor")
-	helpPtr := flag.Bool("help", false, "Print the help and exit")
+	helpPtr := flag.Bool("help", false, "Print this help and exit")
 	debugPtr := flag.Bool("debug", false, "Print lots of log messages")
 	flag.Parse()
 
@@ -56,6 +57,7 @@ type AppOptions struct {
 }
 
 func printHelp() {
+	fmt.Printf("%v [args]\n", os.Args[0])
 	flag.PrintDefaults()
 	os.Exit(0)
 }
